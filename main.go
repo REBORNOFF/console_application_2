@@ -18,5 +18,5 @@ func main() {
 	}
 
 	weatherData := weather.GetWeather(*geoData, *format)
-	fmt.Println(weatherData)
+	fmt.Println(*city, geoData.City, weatherData)
 }

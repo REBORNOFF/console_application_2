@@ -26,6 +26,8 @@ func GetWeather(geo geo.GeoData, format int) string {
 		return ""
 	}
 
+	defer response.Body.Close()
+
 	body, err := io.ReadAll(response.Body)
 	if err != nil {
 		fmt.Println(err.Error())
