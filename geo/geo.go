@@ -21,6 +21,8 @@ func GetMyLocation(city string) (*GeoData, error) {
 		return nil, err
 	}
 
+	defer response.Body.Close()
+
 	if response.StatusCode != 200 {
 		return nil, errors.New("NOT200")
 	}
